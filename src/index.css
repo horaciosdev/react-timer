@@ -1,3 +1,7 @@
+@font-face {
+  font-family: clock;
+  src: url("./assets/fonts/clock.ttf");
+}
 * {
   margin: 0;
   padding: 0;

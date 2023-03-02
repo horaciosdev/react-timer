@@ -103,7 +103,7 @@
 }
 
 .timer-display {
-  font-family: clockicons, sans-serif;
+  font-family: clock, sans-serif;
   font-size: 15em;
   margin: 0px 20px 20px 20px;
   background-color: #d1ded2;
