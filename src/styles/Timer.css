@@ -10,8 +10,7 @@
   padding: 10%;
   height: fit-content;
   border-radius: 10px;
-  box-shadow: 4px 4px 4px 2px #111, inset 4px 4px 3px 0px #fffa,
-    inset -4px -4px 3px 2px #222;
+  box-shadow: inset 4px 4px 3px 0px #fffa, inset -4px -4px 3px 2px #222;
   background: linear-gradient(
     -70deg,
     #dedeff,
@@ -39,10 +38,9 @@
   position: absolute;
   top: -80px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-51%);
   border-radius: 10px;
-  box-shadow: 4px 4px 3px 1px #111, inset 4px 4px 3px 0px #ccc4,
-    inset -4px -4px 3px 0px #222;
+  box-shadow: inset 4px 4px 3px 0px #ccc4, inset -4px -4px 3px 0px #222;
   background: linear-gradient(-45deg, #444 0%, #222 20% 80%, #444 100%);
 }
 .timer::before {
@@ -55,8 +53,7 @@
   transform: translateX(-50%);
   z-index: -1;
   border-radius: 5px;
-  box-shadow: 4px 4px 4px 2px #111, inset 4px 4px 3px 0px #fffa,
-    inset -4px -4px 3px 2px #222;
+  box-shadow: inset 4px 4px 3px 0px #fffa, inset -4px -4px 3px 2px #222;
   background: linear-gradient(
     -90deg,
     #dedeff,
@@ -82,8 +79,7 @@
   padding-top: 10%;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 4px 4px 3px 1px #111, inset 4px 4px 3px 0px #ccc4,
-    inset -4px -4px 3px 0px #222;
+  box-shadow: inset 4px 4px 3px 1px #111, inset -4px -4px 3px 1px #222;
   background: linear-gradient(-45deg, #444 0%, #222 20% 80%, #444 100%);
   font-size: clamp(0px, 1vw, 5px);
   aspect-ratio: 1/1;
