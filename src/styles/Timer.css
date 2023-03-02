@@ -1,0 +1,160 @@
+.timer-container {
+  min-height: calc(100vh - 242px);
+  display: flex;
+  justify-content: center;
+}
+
+.timer {
+  position: relative;
+  margin-top: 100px;
+  padding: 10%;
+  height: fit-content;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px 2px #111, inset 4px 4px 3px 0px #fffa,
+    inset -4px -4px 3px 2px #222;
+  background: linear-gradient(
+    -70deg,
+    #dedeff,
+    #ffffff 21%,
+    #dedeff 24%,
+    #ffffff 27%,
+    #555564 40%,
+    #dedeff 45%,
+    #ffffff 50%,
+    #ffffff 60%,
+    #dedeff 70%,
+    #ffffff 75%,
+    #555564 80%,
+    #ffffff 90%,
+    #dedeff 100%
+  );
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.timer::after {
+  content: "";
+  width: 30%;
+  height: 50px;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  box-shadow: 4px 4px 3px 1px #111, inset 4px 4px 3px 0px #ccc4,
+    inset -4px -4px 3px 0px #222;
+  background: linear-gradient(-45deg, #444 0%, #222 20% 80%, #444 100%);
+}
+.timer::before {
+  content: "";
+  width: 15%;
+  height: 100px;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  border-radius: 5px;
+  box-shadow: 4px 4px 4px 2px #111, inset 4px 4px 3px 0px #fffa,
+    inset -4px -4px 3px 2px #222;
+  background: linear-gradient(
+    -90deg,
+    #dedeff,
+    #ffffff 21%,
+    #dedeff 24%,
+    #ffffff 27%,
+    #555564 40%,
+    #dedeff 45%,
+    #ffffff 50%,
+    #ffffff 60%,
+    #dedeff 70%,
+    #ffffff 75%,
+    #555564 80%,
+    #ffffff 90%,
+    #dedeff 100%
+  );
+}
+
+.timer .inner-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 4px 4px 3px 1px #111, inset 4px 4px 3px 0px #ccc4,
+    inset -4px -4px 3px 0px #222;
+  background: linear-gradient(-45deg, #444 0%, #222 20% 80%, #444 100%);
+  font-size: clamp(0px, 1vw, 5px);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.timer h1 {
+  font-size: 10em;
+  color: #ccc;
+  text-shadow: -1px -1px 2px #ccc, 1px 1px 1px #333;
+}
+
+.timer svg {
+  font-size: 16em;
+  color: #ccc;
+  filter: drop-shadow(-1px -1px 1px #ccc) drop-shadow(1px 1px 1px #333);
+}
+
+.timer-display {
+  font-family: clockicons, "Space Mono", sans-serif;
+  font-size: 15em;
+  margin: 0px 20px 20px 20px;
+  background-color: #d1ded2;
+  color: #1c211b;
+  border-radius: 5px;
+  padding: 0 10px;
+  box-shadow: inset 2px 2px 2px 1px #666;
+  position: relative;
+  z-index: 2;
+}
+.timer-display::before {
+  content: "88:88:88:88";
+  position: absolute;
+  left: 12px;
+  top: 3px;
+  color: #1c211b;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.timer button {
+  text-shadow: 1px 2px 1px #222;
+  min-width: 7em;
+  cursor: pointer;
+  padding: 2% 1%;
+  font-size: 5em;
+  border-radius: 4px;
+  background: linear-gradient(25deg, #525a65, #3b424c);
+  color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset -3px 2px 2px 0px rgba(0, 0, 0, 0.2),
+    2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.timer button:hover {
+  background: linear-gradient(25deg, hsl(215, 10%, 30%), hsl(215, 13%, 20%));
+}
+
+.timer button:active {
+  background: linear-gradient(25deg, hsl(215, 10%, 26%), hsl(215, 13%, 16%));
+  color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 1px 1px 2px 0px #111;
+  transform: translateX(2px) translateY(2px);
+}
+
+.timer button:focus {
+  outline: none;
+}
