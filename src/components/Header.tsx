@@ -8,11 +8,6 @@ export default function Header() {
         <a href="https://github.com/horaciosdev/react-timer" target="_blank">
           <FaGithub /> GitHub
         </a>
-      </button>{" "}
-      <button>
-        <a href="https://my-portfolio-ten-navy.vercel.app/" target="_blank">
-          <FaRocket /> Other Projects
-        </a>
       </button>
     </header>
   );
