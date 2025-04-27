@@ -18,6 +18,7 @@ export default function Timer() {
   });
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [laps, setLaps] = useState<string[]>([]);
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval> = 0;
@@ -65,6 +66,16 @@ export default function Timer() {
     setIsPaused(false);
   };
 
+  const handleLap = () => {
+    if (isActive && !isPaused) {
+      setLaps([...laps, formatTime(time)]);
+    }
+  };
+
+  const handleClearLaps = () => {
+    setLaps([]);
+  };
+
   const formatTime = (time: Time) => {
     return `${time.hours.toString().padStart(2, "0")}:${time.minutes
       .toString()
@@ -74,24 +85,44 @@ export default function Timer() {
   };
 
   return (
-    <div className="timer-container">
-      <div className="timer">
-        <div className="inner-container">
-          <BiTimer />
-          <h1>React Timer</h1>
-          <div className="timer-display">{formatTime(time)}</div>
-          <div className="buttons">
-            {!isActive && !isPaused ? (
-              <button onClick={handleStart}>Start</button>
-            ) : isPaused ? (
-              <button onClick={handleResume}>Resume</button>
-            ) : (
-              <button onClick={handlePause}>Pause</button>
-            )}
-            <button onClick={handleReset}>Reset</button>
+    <>
+      <div className="timer-container">
+        <div className="timer">
+          <div className="inner-container">
+            <BiTimer />
+            <h1>React Timer</h1>
+            <div className="timer-display">{formatTime(time)}</div>
+            <div className="buttons">
+              {!isActive && !isPaused ? (
+                <button onClick={handleStart}>Start</button>
+              ) : isPaused ? (
+                <button onClick={handleResume}>Resume</button>
+              ) : (
+                <button onClick={handlePause}>Pause</button>
+              )}
+              <button onClick={handleReset}>Reset</button>
+              {isActive && !isPaused && (
+                <button onClick={handleLap}>Lap</button>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div>
+        {laps.length > 0 && (
+          <div className="laps-container">
+            <h3>Laps</h3>
+            <ul className="laps-list">
+              {laps.map((lap, index) => (
+                <li key={index}>
+                  Lap {index + 1}: {lap}
+                </li>
+              ))}
+            </ul>
+            <button onClick={handleClearLaps}>Clear Laps</button>
+          </div>
+        )}
+      </div>
+    </>
   );
 }

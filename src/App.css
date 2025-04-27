@@ -1,12 +1,24 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   max-width: 1280px;
   margin: 0 auto;
   box-shadow: 0px 0px 8px 2px #333;
-}
-main {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
   font-family: "Times New Roman", Times, serif;
+  width: 100%;
 }
